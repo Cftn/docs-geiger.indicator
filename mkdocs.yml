@@ -1,0 +1,11 @@
+site_name: '<span style=''color:#d6604d''> GEIGER</span> Indicator'
+site_url: 'https://ngsi-ld.tutorials.readthedocs.org'
+repo_url: 'https://github.com/fiware/tutorials.NGSI-LD'
+site_description: FIWARE NGSI-LD Tutorial Documentation (Smart Farm)
+theme: readthedocs
+nav:
+  - Home: index.md
+  - GEIGER Risk Score: geiger-risk-score.md
+  - GEIGER Indicator Algorithm: indicator-algorithm.md
+  - GEIGER Metric Data: metric-data.md
+  - Implementation: implementation.md

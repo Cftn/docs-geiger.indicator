@@ -94,6 +94,8 @@ docs/_build/
 .pybuilder/
 target/
 /.DS_Store
+/.idea
+
 # Jupyter Notebook
 
 # IPython

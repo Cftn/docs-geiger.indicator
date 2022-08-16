@@ -7,5 +7,5 @@ nav:
   - Home: index.md
   - GEIGER Risk Score: geiger-risk-score.md
   - GEIGER Indicator Algorithm: indicator-algorithm.md
-  - GEIGER Metric Data: metric-data.md
+  - GEIGER Data: metric-data.md
   - Implementation: implementation.md

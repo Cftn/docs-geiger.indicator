@@ -1,6 +1,7 @@
 <h2>Test case</h2>
 
 
+
  **given**
  > my test environment has been set up correctly
  **and** some other conditions are met

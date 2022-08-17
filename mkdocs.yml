@@ -20,11 +20,17 @@ nav:
     - Flowchart: imple/flowchart.md
     - Source Code: imple/source-code.md
   - '<span style=''font-size:100%;padding:0px''>Test case</span>':
-    - Access Local Data Storage: imple/testcase.md
-    - Check GEIGER data exist: imple/testcase.md
-    - Mapping global threat to GEIGER threat: imple/testcase.md
-    - Set up Storage Listener: imple/testcase.md
-    - Getting metric data : imple/testcase.md
-    - Getting pairing data : imple/testcase.md
-    - Score Calculation : imple/testcase.md
-    - SME Score Calculation: imple/testcase.md
+    - Get instance of Local Data Storage: testcase/1-accessLDS.md
+    - Get current user and device UUID: testcase/2-getuuid.md
+    - Prepare indicator input data :
+      - Mapping threats: testcase/3-mapping.md
+      - Prepare global profiles : testcase/prepareProfile.md
+      - Prepare global recommendations : testcase/prepareRecommendation
+    - Check risk score nodes exist: testcase/4-checkdataexist.md
+    - Recived notification of GEIGER data :
+      - Set up Storage Listener: testcase/5-setupListener.md
+      - Getting metrics data : testcase/6-gettingMetric.md
+      - Getting pairing data : testcase/7-gettingPairingdata.md
+    - Score Calculation :
+      - User/Device/Aggregate Score: testcase/scoreCalculation.md
+      - SME Score Calculation: testcase/SMEscoreCalculation.md

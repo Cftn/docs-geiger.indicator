@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://ngsi-ld.tutorials.readthedocs.org/imple/source-code/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Source Code - Tutorial of <span style='color:#d6604d'> GEIGER</span> Indicator</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Source Code";
+        var mkdocs_page_input_path = "imple/source-code.md";
+        var mkdocs_page_url = "/imple/source-code/";
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Tutorial of <span style='color:#d6604d'> GEIGER</span> Indicator
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../geiger-risk-score/">GEIGER Risk Score</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../indicator-algorithm/">GEIGER Indicator Algorithm</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text"><span style='font-size:100%;padding:0px'>GEIGER Data for Risk Score</span></span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../data/local/">:Local</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../data/global/">:Global</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../data/enterprise/">:Enterpise</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../data/devices/">:Devices</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../data/sensor-values/">sensor values</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../data/geiger-score/">geigerScore</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../data/recommendation/">geigerRecommendation</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text"><span style='font-size:100%;padding:0px'>Implementation</span></span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../system-architecture/">System Architecture</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../flowchart/">Flowchart</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Source Code</a>
+    <ul class="current">
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text"><span style='font-size:100%;padding:0px'>Test case</span></span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../testcase/">Access Local Data Storage</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../testcase/">Check GEIGER data exist</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../testcase/">Mapping global threat to GEIGER threat</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../testcase/">Set up Storage Listener</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../testcase/">Getting metric data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../testcase/">Getting pairing data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../testcase/">Score Calculation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../testcase/">SME Score Calculation</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Tutorial of <span style='color:#d6604d'> GEIGER</span> Indicator</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li><span style='font-size:100%;padding:0px'>Implementation</span> &raquo;</li>
+      <li>Source Code</li>
+    <li class="wy-breadcrumbs-aside">
+        <a href="https://github.com/fiware/tutorials.NGSI-LD/edit/master/docs/imple/source-code.md"
+          class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2>Source Code</h2>
+<p>The implementation of GEIGER Cybersecurity Risk Indicator develop using Dart and Flutter. The GEIGER Indicator aim to support cross platform, so the Dart and Flutter is good option that provide compiling for several operating system such as Android, IOS, Windows etc. </br></p>
+<p><a href="https://pub.dev/documentation/toolbox_indicator_test/latest/indicator/indicator-library.html">pud.dev</a> </br>
+<a href="https://github.com/Cftn/GEIGER-indicator">Github</a></p>
+<hr />
+<p>⚙️ <a href="https://github.com/readthedocs-examples/example-mkdocs-basic/blob/main/.readthedocs.yaml">pubspec.yaml</a><br>
+Read the GEIGER Indicator Build configuration is stored in <code>.pubspec.yaml</code>. This is dart/flutter standard. Add your own configurations here, such as extensions. Remember that many extensions and additional Dart packages to be installed.</p>
+<hr />
+<p>📚 <a href="https://github.com/readthedocs-examples/example-mkdocs-basic/blob/main/docs/api.md">lib/src/</a><br>
+All source code of GEIGER Indicator lives in <code>lib/src</code>, it was generated using Dart defaults. All the <code>*.dart</code> make up sections in the documentation.</p>
+<p>💡 <a href="https://github.com/readthedocs-examples/example-mkdocs-basic/blob/main/docs/api.md">../init.dart</a><br>
+It consist of initial function to get and check exist data. (<code>physics user/device UUID, global/score data</code>)</p>
+<p>💡 <a href="https://github.com/readthedocs-examples/example-mkdocs-basic/blob/main/docs/api.md">../listener.dart</a><br>
+Setting the listener using Storage API and manage the notification of metric data (e.g, <code>sensor value</code>, <code>implemented recommendation</code> etc.).</p>
+<p>💡 <a href="https://github.com/readthedocs-examples/example-mkdocs-basic/blob/main/docs/api.md">../sensors_data.dart</a><br>
+Manage the sensor values (e.g, check exist data and update new <code>sensor value</code> etc.).</p>
+<p>💡 <a href="https://github.com/readthedocs-examples/example-mkdocs-basic/blob/main/docs/api.md">../variables.dart</a><br>
+Include all core values of GEIGER indicator (e.g, <code>global data</code>, <code>score data</code>, <code>storage api</code>, <code>node path</code> etc.).</p>
+<hr />
+<p>💡 <a href="https://github.com/readthedocs-examples/example-mkdocs-basic/blob/main/docs/api.md">lib/src/score/</a><br>
+Related calculation of score (<code>user score</code>,<code>device score</code>,<code>aggregate score</code>,<code>SME score</code>).</p>
+<p>💡 <a href="https://github.com/readthedocs-examples/example-mkdocs-basic/blob/main/docs/api.md">../aggregate_score.dart</a><br>
+Calculate <code>aggregate score</code> based on <code>indicator algorithm</code> with pairing data. </p>
+<p>💡 <a href="https://github.com/readthedocs-examples/example-mkdocs-basic/blob/main/docs/api.md">../geiger_score.dart</a><br>
+Calculate and manage <code>user/device/aggregate score nodes</code> based on <code>indicator algorithm</code>.</p>
+<p>💡 <a href="https://github.com/readthedocs-examples/example-mkdocs-basic/blob/main/docs/api.md">../sme_score.dart</a><br>
+Calculate and manage <code>SME score</code> based on <code>indicator algorithm</code> with pairing data. </p>
+<hr />
+<p>💡 <a href="https://github.com/readthedocs-examples/example-mkdocs-basic/blob/main/docs/api.md">lib/src/globaldata/</a><br>
+Related mapping and pre-calculation data for risk score calculation (<code>global threat</code>,<code>global recommendation</code>,<code>global profile</code>).</p>
+<p>💡 <a href="https://github.com/readthedocs-examples/example-mkdocs-basic/blob/main/docs/api.md">../global_profile.dart</a><br>
+Mapping and parsing <code>global profile (company type)</code> for risk score calculation.</p>
+<p>💡 <a href="https://github.com/readthedocs-examples/example-mkdocs-basic/blob/main/docs/api.md">../global_recommendation.dart</a><br>
+Calculate, mapping and parsing <code>global recommendation</code> for risk score calculation.</p>
+<p>💡 <a href="https://github.com/readthedocs-examples/example-mkdocs-basic/blob/main/docs/api.md">../global_threat.dart</a><br>
+Mapping and parsing <code>global threat (unique) based on global profile</code> for risk score calculation.</p>
+<hr />
+<p>📍 <a href="https://github.com/readthedocs-examples/example-mkdocs-basic/blob/main/docs/requirements.txt">lib/indicator.dart</a> <br>
+The main function 'runIndicator' is in this source code. who want to use GEIGER indicator, import this file and call main function.</p>
+<hr />
+<p>📜 <a href="https://github.com/readthedocs-examples/example-mkdocs-basic/blob/main/README.rst">README.md</a><br>
+Contents of this <code>README.md</code> are visible on Github and included on <a href="https://example-mkdocs-basic.readthedocs.io/en/latest/">the documentation index page</a> (Don\'t Repeat Yourself).</p>
+<p>⁉️ Questions / comments<br>
+If you have questions related to this example, feel free to can ask them as a Github issue <a href="https://github.com/readthedocs-examples/example-mkdocs-basic/issues">here</a>.</p>
+<hr />
+<h2 id="example-project-usage">Example Project usage</h2>
+<p>This project has a standard MkDocs layout which is built by Read the Docs almost the same way that you would build it locally (on your own laptop!).</p>
+<p>You can build and view this documentation project locally - we recommend that you activate <a href="https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment">a local Python virtual environment first</a>:</p>
+<pre><code class="language-console"># Install required Python dependencies (MkDocs etc.)
+pip install -r docs/requirements.txt
+
+# Run the mkdocs development server
+mkdocs serve
+</code></pre>
+<h2 id="read-the-docs-tutorial">Read the Docs tutorial</h2>
+<p>To get started with Read the Docs, you may also refer to the <a href="https://docs.readthedocs.io/en/stable/tutorial/">Read the Docs tutorial</a>. It provides a full walk-through of building an example project similar to the one in this repository.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../flowchart/" class="btn btn-neutral float-left" title="Flowchart"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../testcase/" class="btn btn-neutral float-right" title="Access Local Data Storage">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/fiware/tutorials.NGSI-LD" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../flowchart/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../testcase/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

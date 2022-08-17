@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://ngsi-ld.tutorials.readthedocs.org/indicator-algorithm/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>GEIGER Indicator Algorithm - Tutorial of <span style='color:#d6604d'> GEIGER</span> Indicator</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "GEIGER Indicator Algorithm";
+        var mkdocs_page_input_path = "indicator-algorithm.md";
+        var mkdocs_page_url = "/indicator-algorithm/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Tutorial of <span style='color:#d6604d'> GEIGER</span> Indicator
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../geiger-risk-score/">GEIGER Risk Score</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">GEIGER Indicator Algorithm</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text"><span style='font-size:100%;padding:0px'>GEIGER Data for Risk Score</span></span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../data/local/">:Local</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../data/global/">:Global</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../data/enterprise/">:Enterpise</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../data/devices/">:Devices</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../data/sensor-values/">sensor values</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../data/geiger-score/">geigerScore</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../data/recommendation/">geigerRecommendation</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text"><span style='font-size:100%;padding:0px'>Implementation</span></span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../imple/system-architecture/">System Architecture</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../imple/flowchart/">Flowchart</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../imple/source-code/">Source Code</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text"><span style='font-size:100%;padding:0px'>Test case</span></span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../imple/testcase/">Access Local Data Storage</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../imple/testcase/">Check GEIGER data exist</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../imple/testcase/">Mapping global threat to GEIGER threat</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../imple/testcase/">Set up Storage Listener</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../imple/testcase/">Getting metric data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../imple/testcase/">Getting pairing data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../imple/testcase/">Score Calculation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../imple/testcase/">SME Score Calculation</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Tutorial of <span style='color:#d6604d'> GEIGER</span> Indicator</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>GEIGER Indicator Algorithm</li>
+    <li class="wy-breadcrumbs-aside">
+        <a href="https://github.com/fiware/tutorials.NGSI-LD/edit/master/docs/indicator-algorithm.md"
+          class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2>GEIGER Indicator Algorithm</h2>
+
+<p>A threat-based cybersecurity risk assessment algorithm must be supported by a data model and data sources that are equally threat- centric. In this section, we describe how a threat-based view of SME cyber-systems produces a data model supporting a threat-based approach to cybersecurity risk assessment. We outline the data required to enable our approach and describe the algorithm that transforms the data into a cybersecurity risk indicator.</p>
+<p>The goal's of GEIGER indicator provides three score. This figure shows overview of GEIGER scores. The indicator calculate user and device score from each physical device (Android, Windows, IOS etc.) and owner.
+And the indicator provide the aggregate score based on user and device score on physical device. The aggregate score consist of all physical device which is paired on one of device (main device). 
+The calculation of SME score is only allow company owner (CEO). In this calculation, the indicator calculate SME score using the aggregate score of the paired employees. 
+This calculation is hierarchy as shown on figure.. The supervisor calculate the risk score with employees to aggregate score. The company owner calculate SME score when reach aggregate score of employees under CEO position.</p>
+<p><img alt="overview-score" src="https://user-images.githubusercontent.com/15152117/184838875-bf1d653e-8f5d-4a93-b82b-5b73841124c4.png" /></p>
+<p>The indicator algorithm designed based on threats metric. The organization of cyber security announce priority of threat and risk which is more dangerous nowadays. 
+In GEIGER project, this metric is provided as 'global data' such as ':Global:threat', ':Global:profile', 'Global:recommendation'. This threat impacts consist of three impacts (high, medium, low) about SME actions. 
+The indicator algorithm works based on three factor, positive and negative, countermeasures. In this concept, when user do some action on their physical device it would be effect as positive or negative on indicator algorithm. 
+This figure shows formula of indicator algorithm. This formula support risk score using global data, metrics data. Please refer this <a href="https://dl.acm.org/doi/10.1145/3465481.3469199">paper</a> if you want more detailed information.</p>
+<p><img alt="algorithm" src="https://user-images.githubusercontent.com/15152117/184838827-24be329b-b6cf-44a6-80c4-989ec4dcdb72.png" /></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../geiger-risk-score/" class="btn btn-neutral float-left" title="GEIGER Risk Score"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../data/local/" class="btn btn-neutral float-right" title=":Local">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/fiware/tutorials.NGSI-LD" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../geiger-risk-score/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../data/local/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

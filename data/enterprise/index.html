@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://ngsi-ld.tutorials.readthedocs.org/data/enterprise/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>:Enterpise - Tutorial of <span style='color:#d6604d'> GEIGER</span> Indicator</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = ":Enterpise";
+        var mkdocs_page_input_path = "data/enterprise.md";
+        var mkdocs_page_url = "/data/enterprise/";
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Tutorial of <span style='color:#d6604d'> GEIGER</span> Indicator
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../geiger-risk-score/">GEIGER Risk Score</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../indicator-algorithm/">GEIGER Indicator Algorithm</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text"><span style='font-size:100%;padding:0px'>GEIGER Data for Risk Score</span></span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../local/">:Local</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../global/">:Global</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">:Enterpise</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#enterprise">:Enterprise</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#enterpriseusersuser_uuid">:Enterprise:Users:{User_UUID}</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../devices/">:Devices</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../sensor-values/">sensor values</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../geiger-score/">geigerScore</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../recommendation/">geigerRecommendation</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text"><span style='font-size:100%;padding:0px'>Implementation</span></span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../imple/system-architecture/">System Architecture</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../imple/flowchart/">Flowchart</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../imple/source-code/">Source Code</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text"><span style='font-size:100%;padding:0px'>Test case</span></span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../imple/testcase/">Access Local Data Storage</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../imple/testcase/">Check GEIGER data exist</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../imple/testcase/">Mapping global threat to GEIGER threat</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../imple/testcase/">Set up Storage Listener</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../imple/testcase/">Getting metric data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../imple/testcase/">Getting pairing data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../imple/testcase/">Score Calculation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../imple/testcase/">SME Score Calculation</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Tutorial of <span style='color:#d6604d'> GEIGER</span> Indicator</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li><span style='font-size:100%;padding:0px'>GEIGER Data for Risk Score</span> &raquo;</li>
+      <li>:Enterpise</li>
+    <li class="wy-breadcrumbs-aside">
+        <a href="https://github.com/fiware/tutorials.NGSI-LD/edit/master/docs/data/enterprise.md"
+          class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1"></h1>
+<!--<h2 style="box-shadow: 0px 4px 0px 0px #233c68;">:Enterprise</h2>-->
+<h3 id="enterprise">:Enterprise</h3>
+<hr />
+<p>Enterprise node is not only limited to user-specific and device-specific information but also enterprise-specific information, mainly the risk profile associated with the SME (digitally dependent, digital enabler, and digitally based). These nodes are used as a metric to calculate GEIGER aggregate score. Detailed content described Section 3.1.4.2 in D1.2.</p>
+<pre><code>:Enterprise{
+    &quot;name&quot;=[
+        en=&gt;&quot;University of Aplied Sciences Northwestern Switzerland&quot;,
+        de=&gt;&quot;Fachhochschule Nordwestschweiz&quot;
+    ],
+      &quot;associatedProfiles&quot;=[&quot;Digitally based&quot; or &quot;Digitally enabler” or “digitally dependent”]
+      &quot;location&quot;=[&quot;UUID of location&quot;],
+      &quot;sector&quot;=[Example],
+</code></pre>
+<h3 id="enterpriseusersuser_uuid">:Enterprise:Users:{User_UUID}</h3>
+<pre><code>:Enterprise:users:{User_UUID}{
+    &quot;name&quot;=[&quot;Example&quot;],
+    &quot;firstname&quot;=[&quot;Loredana&quot;],
+    &quot;UUIDs&quot;=[&quot;44e128a5-ac7a-4c9a-be4c-224b6bf81b20,44e128a5-ac7a-4c9a-be4c-224b6bf81b21&quot;],
+    &quot;mainUser&quot;=[&quot;1&quot;],
+    &quot;KnowledgeLevel&quot;=[&quot;1&quot;]
+}
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../global/" class="btn btn-neutral float-left" title=":Global"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../devices/" class="btn btn-neutral float-right" title=":Devices">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/fiware/tutorials.NGSI-LD" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../global/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../devices/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

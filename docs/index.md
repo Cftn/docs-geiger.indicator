@@ -14,7 +14,7 @@ The project collaborates with security specialists, cyber ranges, and national c
 A small business can use GEIGER on the web or the smartphone, and it dynamically shows the level of current risks for the company. Seeing high risk allows the user to react immediately and to take simple measures or get help in lowering the risk exposure significantly.
 
 The figure as below depicts the overall GEIGER ecosystem. Our focus in this tutorial will be on the GEIGER indicator as shown in the central cloud of the figure. The **GEIGER Indicator solution** allows users to calculate their **GEIGER score**, a measure of the cybersecurity risk to 
-which they and their MSE are exposed. Based on the characteristics of an MSE and the results of the GEIGER Indicator calculation, users receive recommendations for actions to mitigate cybersecurity risk.
+which they and their SME are exposed. Based on the characteristics of an SME and the results of the GEIGER Indicator calculation, users receive recommendations for actions to mitigate cybersecurity risk.
 We have detailed the algorithmic and cybersecurity concepts behind the GEIGER indicator, the data model that facilitates the algorithm, and the translation of these concepts to code. We provided a theoretical grounding to 
 our work in a [scientific paper](https://dl.acm.org/doi/10.1145/3465481.3469199) presented at the 2021 International Conference on Availability, Reliability, and Security (ARES).
 

@@ -1,4 +1,4 @@
-site_name: '<span style=''color:#d6604d''> GEIGER</span> Indicator'
+site_name: 'Tutorial of <span style=''color:#d6604d''> GEIGER</span> Indicator'
 site_url: 'https://ngsi-ld.tutorials.readthedocs.org'
 repo_url: 'https://github.com/fiware/tutorials.NGSI-LD'
 site_description: FIWARE NGSI-LD Tutorial Documentation (Smart Farm)
@@ -7,5 +7,24 @@ nav:
   - Home: index.md
   - GEIGER Risk Score: geiger-risk-score.md
   - GEIGER Indicator Algorithm: indicator-algorithm.md
-  - GEIGER Data: metric-data.md
-  - Implementation: implementation.md
+  - '<span style=''font-size:100%;padding:0px''>GEIGER Data for Risk Score</span>':
+    - :Local : data/local.md
+    - :Global : data/global.md
+    - :Enterpise : data/enterprise.md
+    - :Devices : data/devices.md
+    - sensor values : data/sensor-values.md
+    - geigerScore : data/geiger-score.md
+    - geigerRecommendation : data/recommendation.md
+  - '<span style=''font-size:100%;padding:0px''>Implementation</span>':
+    - System Architecture: imple/system-architecture.md
+    - Flowchart: imple/flowchart.md
+    - Source Code: imple/source-code.md
+  - '<span style=''font-size:100%;padding:0px''>Test case</span>':
+    - Access Local Data Storage: imple/testcase.md
+    - Check GEIGER data exist: imple/testcase.md
+    - Mapping global threat to GEIGER threat: imple/testcase.md
+    - Set up Storage Listener: imple/testcase.md
+    - Getting metric data : imple/testcase.md
+    - Getting pairing data : imple/testcase.md
+    - Score Calculation : imple/testcase.md
+    - SME Score Calculation: imple/testcase.md

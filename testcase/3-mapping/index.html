@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://ngsi-ld.tutorials.readthedocs.org/imple/testcase/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://ngsi-ld.tutorials.readthedocs.org/testcase/3-mapping/" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Testcase - Tutorial of <span style='color:#d6604d'> GEIGER</span> Indicator</title>
+    <title>Mapping threats - Tutorial of <span style='color:#d6604d'> GEIGER</span> Indicator</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Testcase";
-        var mkdocs_page_input_path = "imple/testcase.md";
-        var mkdocs_page_url = "/imple/testcase/";
+        var mkdocs_page_name = "Mapping threats";
+        var mkdocs_page_input_path = "testcase/3-mapping.md";
+        var mkdocs_page_url = "/testcase/3-mapping/";
       </script>
     
     <script src="../../js/jquery-3.6.0.min.js" defer></script>
@@ -71,46 +71,46 @@
               </ul>
               <p class="caption"><span class="caption-text"><span style='font-size:100%;padding:0px'>Implementation</span></span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../system-architecture/">System Architecture</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../imple/system-architecture/">System Architecture</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../flowchart/">Flowchart</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../imple/flowchart/">Flowchart</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../source-code/">Source Code</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../imple/source-code/">Source Code</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text"><span style='font-size:100%;padding:0px'>Test case</span></span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../testcase/1-accessLDS/">Get instance of Local Data Storage</a>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../1-accessLDS/">Get instance of Local Data Storage</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../testcase/2-getuuid/">Get current user and device UUID</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../2-getuuid/">Get current user and device UUID</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">Prepare indicator input data</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../testcase/3-mapping/">Mapping threats</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Prepare indicator input data</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Mapping threats</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../testcase/prepareProfile/">Prepare global profiles</a>
+                <li class="toctree-l2"><a class="reference internal" href="../prepareProfile/">Prepare global profiles</a>
                 </li>
-                <li class="toctree-l2"><a class="" href="../../testcase/prepareRecommendation">Prepare global recommendations</a>
+                <li class="toctree-l2"><a class="" href="../prepareRecommendation">Prepare global recommendations</a>
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../testcase/4-checkdataexist/">Check risk score nodes exist</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../4-checkdataexist/">Check risk score nodes exist</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="#">Recived notification of GEIGER data</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../testcase/5-setupListener/">Set up Storage Listener</a>
+                <li class="toctree-l2"><a class="reference internal" href="../5-setupListener/">Set up Storage Listener</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../testcase/6-gettingMetric/">Getting metrics data</a>
+                <li class="toctree-l2"><a class="reference internal" href="../6-gettingMetric/">Getting metrics data</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../testcase/7-gettingPairingdata/">Getting pairing data</a>
+                <li class="toctree-l2"><a class="reference internal" href="../7-gettingPairingdata/">Getting pairing data</a>
                 </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="#">Score Calculation</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../testcase/scoreCalculation/">User/Device/Aggregate Score</a>
+                <li class="toctree-l2"><a class="reference internal" href="../scoreCalculation/">User/Device/Aggregate Score</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../testcase/SMEscoreCalculation/">SME Score Calculation</a>
+                <li class="toctree-l2"><a class="reference internal" href="../SMEscoreCalculation/">SME Score Calculation</a>
                 </li>
     </ul>
                   </li>
@@ -129,9 +129,11 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-      <li>Testcase</li>
+          <li><span style='font-size:100%;padding:0px'>Test case</span> &raquo;</li>
+          <li>Prepare indicator input data &raquo;</li>
+      <li>Mapping threats</li>
     <li class="wy-breadcrumbs-aside">
-        <a href="https://github.com/fiware/tutorials.NGSI-LD/edit/master/docs/imple/testcase.md"
+        <a href="https://github.com/fiware/tutorials.NGSI-LD/edit/master/docs/testcase/3-mapping.md"
           class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
@@ -140,34 +142,85 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h2>Test case</h2>
+                <h3 style="box-shadow: 0px 4px 0px 0px #233c68;">Mapping global threat to GEIGER threat with global profiles (company type)</h3>
 
 <p><strong>given</strong></p>
 <blockquote>
-<p>my test environment has been set up correctly
- <strong>and</strong> some other conditions are met</p>
+<p>prepared <code>Local Data Storage instance</code> to access Local Data Storage.</p>
 </blockquote>
 <p><strong>when</strong> </p>
 <blockquote>
-<p>I push <em>the big red button</em></p>
+<p>call <code>generateThreats()</code> function to mapping normal threats to geiger threats (12). </p>
 </blockquote>
 <p><strong>then</strong> </p>
 <blockquote>
-<p><em>the big red light</em> should flash <strong>and</strong> <em>the alarm</em> should sound</p>
-</blockquote>
 <ul>
-<li>Access Local Data Storage      </li>
-<li>Check GEIGER data whether exist or not (:Local, :Global, :Enterprise) </li>
-<li>Mapping global threat to GEIGER threat with global profiles (company type)</li>
-<li>Set up Storage Listener</li>
-<li>Getting metric data (Sensor Value, Recommendation)</li>
-<li>Getting pairing data (Devices, Employees)</li>
-<li>Score Calculation (User, Device, Calculation)</li>
-<li>SME Score Calculation</li>
+<li>get normal threats from <code>:Global:threats</code> node. </li>
+<li>parsing and mapping to threats data to <code>Map&lt;key,value&gt;</code> in <code>variables.dart</code> referred <code>:Global:profiles</code>.</li>
 </ul>
+</blockquote>
+<pre><code> ///Parsing ':Global:threats' Node
+ ///Normal threats -&gt; GEIGER threats (12)
+ ///GEIGER threats (12) defined by CERT
+ Future generateThreats() async {
+   try {
+
+     var globalThreats = await Storage.controller.get(':Global:threats');
+     var nodesCsv = await globalThreats.getChildNodesCsv();
+
+     if(nodesCsv.isNotEmpty) {
+
+       ///get all threat nodes
+       var getChildren = await globalThreats.getChildren();
+       var threatsIterator = getChildren.entries.iterator;
+
+       ///To makes threat uuid list
+       ///this uuid use on map as key
+       var uuidThreats = nodesCsv.toString().split(',');
+       logger.d('uuidThreats =&gt; ${uuidThreats.toString()}');
+       var uuidIterator = uuidThreats.iterator;
+       CoreValues.uuidThreats = uuidThreats;
+
+       ///loop threats
+       while (threatsIterator.moveNext()) {
+         uuidIterator.moveNext();
+
+         var threatNameNode = await threatsIterator.current.value.getValue('name');
+         var threatName = threatNameNode!.getValue('en');
+
+   var geigerThreatNameNode = await threatsIterator.current.value.getValue('GEIGER_threat');  //geigerThreat
+   var geigerThreatName = geigerThreatNameNode!.getValue('en');
+
+
+   ///Making the threat maps
+   CoreValues.threatUUIDThreatName[uuidIterator.current] = threatName;
+   CoreValues.threatNameThreatUUID[threatName] = uuidIterator.current;
+
+   CoreValues.threatUUIDGeigerName[uuidIterator.current] = geigerThreatName;
+
+   if(!CoreValues.geigerNameThreatUUID.containsKey(geigerThreatName)){
+   CoreValues.geigerNameThreatUUID[geigerThreatName] = [];
+   CoreValues.geigerNameThreatUUID[geigerThreatName].add(uuidIterator.current);
+   }else{
+   CoreValues.geigerNameThreatUUID[geigerThreatName].add(uuidIterator.current);
+   }
+
+   }
+   }
+
+
+   }catch(e) {
+   logger.e('generateThreats ${e.toString()}');
+   }
+ }
+</code></pre>
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../2-getuuid/" class="btn btn-neutral float-left" title="Get current user and device UUID"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../prepareProfile/" class="btn btn-neutral float-right" title="Prepare global profiles">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -193,6 +246,10 @@
         </span>
     
     
+      <span><a href="../2-getuuid/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../prepareProfile/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://ngsi-ld.tutorials.readthedocs.org/testcase/prepareRecommendation/" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Prepare global recommendations - Tutorial of <span style='color:#d6604d'> GEIGER</span> Indicator</title>
+    <title>prepareRecommendation - Tutorial of <span style='color:#d6604d'> GEIGER</span> Indicator</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Prepare global recommendations";
+        var mkdocs_page_name = "prepareRecommendation";
         var mkdocs_page_input_path = "testcase/prepareRecommendation.md";
         var mkdocs_page_url = "/testcase/prepareRecommendation/";
       </script>
@@ -79,40 +79,18 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Test case</span></p>
-              <ul class="current">
+              <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../1-accessLDS/">Get instance of Local Data Storage</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../2-getuuid/">Get current user and device UUID</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Prepare indicator input data</a>
-    <ul class="current">
-                <li class="toctree-l2"><a class="reference internal" href="../3-mapping/">Mapping threats</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../prepareProfile/">Prepare global profiles</a>
-                </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">Prepare global recommendations</a>
-                </li>
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../prepare-inputdata/">Prepare indicator input data</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../4-checkdataexist/">Check risk score nodes exist</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">Recived notification of GEIGER data</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../5-setupListener/">Set up Storage Listener</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../6-gettingMetric/">Getting metrics data</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../7-gettingPairingdata/">Getting pairing data</a>
-                </li>
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../listen-geiger-data/">Recived notification of GEIGER data</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">Score Calculation</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../scoreCalculation/">User/Device/Aggregate Score</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../SMEscoreCalculation/">SME Score Calculation</a>
-                </li>
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../scoreCalculation/">Score Calculation</a>
                   </li>
               </ul>
       </div>
@@ -129,12 +107,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>Test case &raquo;</li>
-          <li>Prepare indicator input data &raquo;</li>
-      <li>Prepare global recommendations</li>
+      <li>prepareRecommendation</li>
     <li class="wy-breadcrumbs-aside">
-        <a href="https://github.com/fiware/tutorials.NGSI-LD/edit/master/docs/testcase/prepareRecommendation.md"
-          class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -248,10 +222,6 @@ Future getRecommendation() async {
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../prepareProfile/" class="btn btn-neutral float-left" title="Prepare global profiles"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../4-checkdataexist/" class="btn btn-neutral float-right" title="Check risk score nodes exist">Next <span class="icon icon-circle-arrow-right"></span></a>
-    </div>
 
   <hr/>
 
@@ -272,15 +242,7 @@ Future getRecommendation() async {
   <div class="rst-versions" role="note" aria-label="Versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
-        <span>
-          <a href="https://github.com/fiware/tutorials.NGSI-LD" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
-        </span>
     
-    
-      <span><a href="../prepareProfile/" style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../4-checkdataexist/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

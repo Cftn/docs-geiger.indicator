@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://ngsi-ld.tutorials.readthedocs.org/testcase/SMEscoreCalculation/" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>SME Score Calculation - Tutorial of <span style='color:#d6604d'> GEIGER</span> Indicator</title>
+    <title>SMEscoreCalculation - Tutorial of <span style='color:#d6604d'> GEIGER</span> Indicator</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "SME Score Calculation";
+        var mkdocs_page_name = "SMEscoreCalculation";
         var mkdocs_page_input_path = "testcase/SMEscoreCalculation.md";
         var mkdocs_page_url = "/testcase/SMEscoreCalculation/";
       </script>
@@ -79,40 +79,18 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Test case</span></p>
-              <ul class="current">
+              <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../1-accessLDS/">Get instance of Local Data Storage</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../2-getuuid/">Get current user and device UUID</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">Prepare indicator input data</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../3-mapping/">Mapping threats</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../prepareProfile/">Prepare global profiles</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../prepareRecommendation/">Prepare global recommendations</a>
-                </li>
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../prepare-inputdata/">Prepare indicator input data</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../4-checkdataexist/">Check risk score nodes exist</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">Recived notification of GEIGER data</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../5-setupListener/">Set up Storage Listener</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../6-gettingMetric/">Getting metrics data</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../7-gettingPairingdata/">Getting pairing data</a>
-                </li>
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../listen-geiger-data/">Recived notification of GEIGER data</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Score Calculation</a>
-    <ul class="current">
-                <li class="toctree-l2"><a class="reference internal" href="../scoreCalculation/">User/Device/Aggregate Score</a>
-                </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">SME Score Calculation</a>
-                </li>
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../scoreCalculation/">Score Calculation</a>
                   </li>
               </ul>
       </div>
@@ -129,12 +107,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>Test case &raquo;</li>
-          <li>Score Calculation &raquo;</li>
-      <li>SME Score Calculation</li>
+      <li>SMEscoreCalculation</li>
     <li class="wy-breadcrumbs-aside">
-        <a href="https://github.com/fiware/tutorials.NGSI-LD/edit/master/docs/testcase/SMEscoreCalculation.md"
-          class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -205,9 +179,6 @@ Future updateScoreMSENode() async {
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../scoreCalculation/" class="btn btn-neutral float-left" title="User/Device/Aggregate Score"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-    </div>
 
   <hr/>
 
@@ -228,12 +199,6 @@ Future updateScoreMSENode() async {
   <div class="rst-versions" role="note" aria-label="Versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
-        <span>
-          <a href="https://github.com/fiware/tutorials.NGSI-LD" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
-        </span>
-    
-    
-      <span><a href="../scoreCalculation/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
   </span>

@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://ngsi-ld.tutorials.readthedocs.org/geiger-risk-score/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://ngsi-ld.tutorials.readthedocs.org/list-module/" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>GEIGER Risk Score - Tutorial of <span style='color:#d6604d'> GEIGER</span> Indicator</title>
+    <title>List module - Tutorial of <span style='color:#d6604d'> GEIGER</span> Indicator</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "GEIGER Risk Score";
-        var mkdocs_page_input_path = "geiger-risk-score.md";
-        var mkdocs_page_url = "/geiger-risk-score/";
+        var mkdocs_page_name = "List module";
+        var mkdocs_page_input_path = "list-module.md";
+        var mkdocs_page_url = "/list-module/";
       </script>
     
     <script src="../js/jquery-3.6.0.min.js" defer></script>
@@ -44,8 +44,8 @@
                 <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
                 </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">GEIGER Risk Score</a>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../geiger-risk-score/">GEIGER Risk Score</a>
                 </li>
               </ul>
               <ul>
@@ -107,7 +107,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-      <li>GEIGER Risk Score</li>
+      <li>List module</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -122,27 +122,32 @@
  @authors JongGwan An [kman3212@gmail.com]
 -->
 
-<h2>GEIGER Risk Score</h2>
+<h3 style="box-shadow: 0px 4px 0px 0px #233c68;">GEIGER Toolbox</h3>
 
-<p>The GEIGER Indicator solution allows users to calculate their GEIGER score, a measure of the cybersecurity risk to which they and their SME are exposed. Based on the characteristics of an MSE and the results of the GEIGER Indicator calculation, users receive recommendations for actions to mitigate cybersecurity risk.</p>
-<p>The GEIGER Indicator score can be further subcategorized into two scores: Device score and User score, 
-together they form the Global GEIGER score. More precisely, for each <a href="">GEIGER threat</a> defined, a score is calculated for ‘User’ and ‘Device’ based on metrics received from different tools.</p>
-<p>The GEIGER Indicator contains 4 key points described as below. </p>
-<p>&nbsp;&nbsp;<a href=""><strong>User/Device Score</strong></a> </br>
-&nbsp;&nbsp;The User Score describes knowledge of cyber security and weather following recommendations. &nbsp;&nbsp;The Device Score shows the status of the device against threats.</p>
-<p>&nbsp;&nbsp;<a href=""><strong>Aggregate Score</strong></a> </br>
-&nbsp;&nbsp;The Aggregate Score is an aggregate score that is average among User, Device score.</p>
-<p>&nbsp;&nbsp;<a href=""><strong>SME Score</strong></a> </br>
-&nbsp;&nbsp;The SME Score is for the company. The Company owner only has the MSE score. The MSE Score &nbsp;&nbsp;shows the average of all Employee’s total Score who agreed to share their score to supervisors.</p>
-<p>&nbsp;&nbsp;<a href=""><strong>Recommendations</strong></a> </br>
-&nbsp;&nbsp;The recommendation is suitable action for each user based on the type of threats. The users get &nbsp;&nbsp;the installation link of plugins with recommendation. </p>
+<p>The GEIGER Toolbox is a tool enabling the user to assess their Cyberthreat exposure and forms an open ecosystem allowing any interested party to extend this tool by adding plugins. </p>
+<ul>
+<li><a href="https://pub.dev/packages/geiger_localstorage">GEIGER Storage</a><br/></li>
+<li><a href="https://pub.dev/packages/geiger_api">GEIGER Communication API</a><br/></li>
+<li><a href="https://github.com/cyber-geiger/toolbox-ui-flutter">GEIGER Toolbox UI</a><br/></li>
+<li><a href="https://pub.dev/packages/toolbox_indicator_test">GEIGER Indicator</a><br/></li>
+</ul>
+<h3 style="box-shadow: 0px 4px 0px 0px #5dc0cf;">Cloud</h3>
+
+<p>There is an additional component named GEIGER Cloud Adapter that will oversee the process of searching and synchronizing data between the GEIGER Toolbox and GEIGER Cloud. Besides, the Cloud Adapter also allows for searching and synchronizing data with the Toolbox Core.</p>
+<ul>
+<li><a href="https://github.com/cyber-geiger/cloud-adapter">GEIGER Cloud Adapter</a><br/></li>
+</ul>
+<h3 style="box-shadow: 0px 4px 0px 0px #233c68;">External Plugin</h3>
+
+<p>The plugins may be added at any time by the user and integrate seamlessly into the framework. No modification on the core application is required to add new indicators of cyber threats, recommendations, or functionalities. They all may be added using project external code.</p>
+<ul>
+<li><a href="">CyberRange (MI)</a><br/></li>
+<li><a href="">KSP (MI)</a><br/></li>
+<li><a href="">Chatbot (KPMG)</a><br/></li>
+</ul>
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../indicator-algorithm/" class="btn btn-neutral float-right" title="GEIGER Indicator Algorithm">Next <span class="icon icon-circle-arrow-right"></span></a>
-    </div>
 
   <hr/>
 
@@ -164,10 +169,6 @@ together they form the Global GEIGER score. More precisely, for each <a href="">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../indicator-algorithm/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

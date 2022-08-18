@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://ngsi-ld.tutorials.readthedocs.org/testcase/prepareProfile/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://ngsi-ld.tutorials.readthedocs.org/testcase/prepare-inputdata/" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>prepareProfile - Tutorial of <span style='color:#d6604d'> GEIGER</span> Indicator</title>
+    <title>Prepare indicator input data - Tutorial of <span style='color:#d6604d'> GEIGER</span> Indicator</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "prepareProfile";
-        var mkdocs_page_input_path = "testcase/prepareProfile.md";
-        var mkdocs_page_url = "/testcase/prepareProfile/";
+        var mkdocs_page_name = "Prepare indicator input data";
+        var mkdocs_page_input_path = "testcase/prepare-inputdata.md";
+        var mkdocs_page_url = "/testcase/prepare-inputdata/";
       </script>
     
     <script src="../../js/jquery-3.6.0.min.js" defer></script>
@@ -79,12 +79,20 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Test case</span></p>
-              <ul>
+              <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../1-accessLDS/">Get instance of Local Data Storage</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../2-getuuid/">Get current user and device UUID</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../prepare-inputdata/">Prepare indicator input data</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Prepare indicator input data</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#mapping-threats">Mapping threats</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#prepare-global-profiles">Prepare global profiles</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#prepare-global-recommendations">Prepare global recommendations</a>
+    </li>
+    </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../4-checkdataexist/">Check risk score nodes exist</a>
                   </li>
@@ -107,7 +115,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-      <li>prepareProfile</li>
+          <li>Test case &raquo;</li>
+      <li>Prepare indicator input data</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -122,8 +131,83 @@
  @authors JongGwan An [kman3212@gmail.com]
 -->
 
-<h3 style="box-shadow: 0px 4px 0px 0px #233c68;">Prepare metrics about company profile(type) => (based, enabler, dependent)</h3>
+<h1 id="_1"></h1>
+<h2 id="mapping-threats">Mapping threats</h2>
+<p><em>Mapping global threat to GEIGER threat with global profiles (company type)</em></p>
+<p><strong>given</strong></p>
+<blockquote>
+<p>prepared <code>Local Data Storage instance</code> to access Local Data Storage.</p>
+</blockquote>
+<p><strong>when</strong> </p>
+<blockquote>
+<p>call <code>generateThreats()</code> function to mapping normal threats to geiger threats (12). </p>
+</blockquote>
+<p><strong>then</strong> </p>
+<blockquote>
+<ul>
+<li>get normal threats from <code>:Global:threats</code> node. </li>
+<li>parsing and mapping to threats data to <code>Map&lt;key,value&gt;</code> in <code>variables.dart</code> referred <code>:Global:profiles</code>.</li>
+</ul>
+</blockquote>
+<pre><code> ///Parsing ':Global:threats' Node
+ ///Normal threats -&gt; GEIGER threats (12)
+ ///GEIGER threats (12) defined by CERT
+ Future generateThreats() async {
+   try {
 
+     var globalThreats = await Storage.controller.get(':Global:threats');
+     var nodesCsv = await globalThreats.getChildNodesCsv();
+
+     if(nodesCsv.isNotEmpty) {
+
+       ///get all threat nodes
+       var getChildren = await globalThreats.getChildren();
+       var threatsIterator = getChildren.entries.iterator;
+
+       ///To makes threat uuid list
+       ///this uuid use on map as key
+       var uuidThreats = nodesCsv.toString().split(',');
+       logger.d('uuidThreats =&gt; ${uuidThreats.toString()}');
+       var uuidIterator = uuidThreats.iterator;
+       CoreValues.uuidThreats = uuidThreats;
+
+       ///loop threats
+       while (threatsIterator.moveNext()) {
+         uuidIterator.moveNext();
+
+         var threatNameNode = await threatsIterator.current.value.getValue('name');
+         var threatName = threatNameNode!.getValue('en');
+
+   var geigerThreatNameNode = await threatsIterator.current.value.getValue('GEIGER_threat');  //geigerThreat
+   var geigerThreatName = geigerThreatNameNode!.getValue('en');
+
+
+   ///Making the threat maps
+   CoreValues.threatUUIDThreatName[uuidIterator.current] = threatName;
+   CoreValues.threatNameThreatUUID[threatName] = uuidIterator.current;
+
+   CoreValues.threatUUIDGeigerName[uuidIterator.current] = geigerThreatName;
+
+   if(!CoreValues.geigerNameThreatUUID.containsKey(geigerThreatName)){
+   CoreValues.geigerNameThreatUUID[geigerThreatName] = [];
+   CoreValues.geigerNameThreatUUID[geigerThreatName].add(uuidIterator.current);
+   }else{
+   CoreValues.geigerNameThreatUUID[geigerThreatName].add(uuidIterator.current);
+   }
+
+   }
+   }
+
+
+   }catch(e) {
+   logger.e('generateThreats ${e.toString()}');
+   }
+ }
+</code></pre>
+<!--next-->
+<hr />
+<h2 id="prepare-global-profiles">Prepare global profiles</h2>
+<p><em>Prepare metrics about company profile(type) =&gt; (based, enabler, dependent)</em></p>
 <p><strong>given</strong></p>
 <blockquote>
 <p>prepared <code>Local Data Storage instance</code> to access Local Data Storage.</p>
@@ -204,9 +288,112 @@
    }
  }
 </code></pre>
+<!--next-->
+<hr />
+<h2 id="prepare-global-recommendations">Prepare global recommendations</h2>
+<p><em>Prepare metrics about recommendation each threat</em></p>
+<p><strong>given</strong></p>
+<blockquote>
+<p>prepared <code>Local Data Storage instance</code> to access Local Data Storage.</p>
+</blockquote>
+<p><strong>when</strong> </p>
+<blockquote>
+<p>call <code>getRecommendation()</code> function to parsing <code>:Global:profiles</code>. </p>
+</blockquote>
+<p><strong>then</strong> </p>
+<blockquote>
+<ul>
+<li>get profile data from <code>:Global:recommendation</code> node. </li>
+<li>parsing to profile data to <code>Map&lt;key,value&gt;</code> in <code>variables.dart</code>.</li>
+</ul>
+</blockquote>
+<pre><code>///Making Map&lt;String, List&lt;Map&gt;&gt; user, device Recommendation
+///Parsing global recommendation metrics
+/// key =&gt; global threat UUID unique (12)
+/// value =&gt; recommendation Map List
+/// recommendation Map List =&gt; [{metric, recommendation UUID},....]
+Future getRecommendation() async {
+
+  const path = ':Global:Recommendations';
+
+  try {
+
+    ///Get all global recommendation List
+    ///this is static from cloud
+    var recommendationNode = await Storage.controller.get(path);
+    var getChildren = await recommendationNode.getChildren();
+    var recoStrList = await recommendationNode.getChildNodesCsv();
+    var recoList = recoStrList.split(',');
+    logger.d('reco List =&gt; $recoList');
+
+    var recoNodeIterator = getChildren.entries.iterator;
+
+
+    ///loop each recommendation Node
+    while (recoNodeIterator.moveNext()) {
+
+      var recommendationTypeNode = await recoNodeIterator.current.value.getValue('RecommendationType');
+      var recommendationType = recommendationTypeNode!.getValue('en')!;
+  logger.d('a$recommendationType');
+
+  var relatedThreatsWeightsNode = await recoNodeIterator.current.value.getValue('relatedThreatsWeights');
+  //logger.d('b$relatedThreatsWeightsNode');
+  var metricThreats = relatedThreatsWeightsNode!.getValue('en')!.split(';'); //List&lt;String&gt;
+  logger.d('c$metricThreats');
+
+  for (var metricNode in metricThreats) {
+
+  ///{'threatUUID,metricValue({'high', 'medium', 'low'})
+  ///metric[0] =&gt;  threatUUID
+  ///metric[1] =&gt;  metric {'high' or 'medium' or 'low'}
+  var metric = metricNode.split(',');
+  logger.d('&gt;&gt;&gt;$metric');
+
+  var metricRecoUUID = {};
+  metricRecoUUID['metric'] = metric[1];
+  metricRecoUUID['recoUUID'] = recoNodeIterator.current.key;
+
+
+
+  if (recommendationType == Types.recoTypeDevice) {
+  try {
+  if(metric[0].isNotEmpty) CoreValues.deviceRecommendation[metric[0]]!.add(metricRecoUUID);
+  } catch (e) {
+  var temp = &lt;Map&gt;[];
+  temp.add(metricRecoUUID);
+  CoreValues.deviceRecommendation[metric[0]] = temp;
+  }
+  } else {
+  try {
+      if(metric[0].isNotEmpty) CoreValues.userRecommendation[metric[0]]!.add(metricRecoUUID);
+  } catch (e) {
+      var temp = &lt;Map&gt;[];
+      temp.add(metricRecoUUID);
+      CoreValues.userRecommendation[metric[0]] = temp;
+  }
+  }
+  }
+  }
+  logger.d('userRecommendation =&gt; ${CoreValues.userRecommendation}');
+  logger.d('deviceRecommendation =&gt; ${CoreValues.deviceRecommendation}');
+
+
+  } on StorageException{
+  logger.e('$path does not exist, please check your global data');
+
+  }
+  catch (e) {
+  logger.e(e);
+  }
+}
+</code></pre>
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../2-getuuid/" class="btn btn-neutral float-left" title="Get current user and device UUID"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../4-checkdataexist/" class="btn btn-neutral float-right" title="Check risk score nodes exist">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -228,6 +415,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="../2-getuuid/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../4-checkdataexist/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

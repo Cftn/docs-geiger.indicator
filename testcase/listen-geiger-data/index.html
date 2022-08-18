@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://ngsi-ld.tutorials.readthedocs.org/testcase/7-gettingPairingdata/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://ngsi-ld.tutorials.readthedocs.org/testcase/listen-geiger-data/" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>7 gettingPairingdata - Tutorial of <span style='color:#d6604d'> GEIGER</span> Indicator</title>
+    <title>Recived notification of GEIGER data - Tutorial of <span style='color:#d6604d'> GEIGER</span> Indicator</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "7 gettingPairingdata";
-        var mkdocs_page_input_path = "testcase/7-gettingPairingdata.md";
-        var mkdocs_page_url = "/testcase/7-gettingPairingdata/";
+        var mkdocs_page_name = "Recived notification of GEIGER data";
+        var mkdocs_page_input_path = "testcase/listen-geiger-data.md";
+        var mkdocs_page_url = "/testcase/listen-geiger-data/";
       </script>
     
     <script src="../../js/jquery-3.6.0.min.js" defer></script>
@@ -79,7 +79,7 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Test case</span></p>
-              <ul>
+              <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../1-accessLDS/">Get instance of Local Data Storage</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../2-getuuid/">Get current user and device UUID</a>
@@ -88,7 +88,15 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../4-checkdataexist/">Check risk score nodes exist</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../listen-geiger-data/">Recived notification of GEIGER data</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Recived notification of GEIGER data</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#set-up-storage-listener">Set up Storage Listener</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#getting-metrics-data">Getting metrics data</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#getting-pairing-data">Getting pairing data</a>
+    </li>
+    </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../scoreCalculation/">Score Calculation</a>
                   </li>
@@ -107,7 +115,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-      <li>7 gettingPairingdata</li>
+          <li>Test case &raquo;</li>
+      <li>Recived notification of GEIGER data</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -122,8 +131,162 @@
  @authors JongGwan An [kman3212@gmail.com]
 -->
 
-<h3 style="box-shadow: 0px 4px 0px 0px #233c68;">Getting pairing data (Devices, Employees)</h3>
+<h1 id="_1"></h1>
+<h2 id="set-up-storage-listener">Set up Storage Listener</h2>
+<p><strong>given</strong></p>
+<blockquote>
+<p>prepared <code>Local Data Storage instance</code> to access Local Data Storage.</p>
+</blockquote>
+<p><strong>when</strong> </p>
+<blockquote>
+<p>call the <code>setValueListener()</code> function to register the specific node to receive notification . </p>
+</blockquote>
+<p><strong>then</strong> </p>
+<blockquote>
+<p>call the <code>registerListener()</code> function with callback function, path and primary key(attribute name).</p>
+</blockquote>
+<pre><code> ///Set the trigger to get data for calculation using Local Storage Listener
+ Future setValueListener() async{
 
+   ///To receive Metric data (Positive, Negative)
+   ///The calculation algorithm consist of positive, negative and countermeasures)
+   await registerListener(Listener.indicatorListener, Types.userNode,'GEIGERvalue');
+   await registerListener(Listener.indicatorListener, Types.deviceNode,'GEIGERvalue');
+
+   ///To receive Implemented recommendations from UI
+   ///This data effect to risk score as Positive metric
+   ///And effect to each threats score which is related Implemented Recommendations
+   await registerListener(Listener.indicatorListener, Types.userNode,'implementedRecommendations');
+   await registerListener(Listener.indicatorListener, Types.deviceNode,'implementedRecommendations');
+
+   ///To receive dynamic recommendations from external plugin
+   ///Chatbot, KSP provide their onw recommendation
+   await registerListener(Listener.indicatorListener, Types.deviceNode,'pluginName');
+
+   ///To receive Pairing information
+   ///It include device, employee paring and it used on aggregate score and MSE score
+   await registerListener(Listener.indicatorListener, ':' + Types.enterprise + ':Users:' + Storage.userUUID,'sharedGeigerScore');
+ }
+
+ ///Register Listener based on path, Value using Local Storage Listener
+ Future registerListener(var l, var path, var type) async{
+
+   ///Register parent path of target Node
+   SearchCriteria s = SearchCriteria(searchPath: path);
+   ///Set specific attribute of target Node
+   s.nodeValueKey = type;
+   Storage.controller.registerChangeListener(l, s);
+
+   logger.d(s);
+ }
+</code></pre>
+<!--next-->
+<hr />
+<h2 id="getting-metrics-data">Getting metrics data</h2>
+<p><em>Getting metric data (Sensor Value, Recommendation</em></p>
+<p><strong>given</strong></p>
+<blockquote>
+<ul>
+<li>prepared <code>Local Data Storage instance</code> to access Local Data Storage.</li>
+<li>registered <code>specific node (metrics)</code> to received new data from Local Data Storage.</li>
+</ul>
+</blockquote>
+<p><strong>when</strong> </p>
+<blockquote>
+<p>Occurring creation or update on node registered subscription by <code>Storage Listener</code>.</p>
+</blockquote>
+<p><strong>then</strong> </p>
+<blockquote>
+<ul>
+<li>delivered <code>new data node</code> to <code>gotStorageChange</code> callback function.</li>
+<li>checked <code>new data node</code> based on each conditions</li>
+<li>call <code>updateData()</code> function to parsing and calculate risk score. </li>
+</ul>
+</blockquote>
+<pre><code>   ///Received metric data using Storage Listener
+   @override
+   void gotStorageChange(EventType event, Node? oldNode, Node? newNode) async {
+
+       logger.i('new event from =&gt;&gt; ${newNode!.owner} ${newNode.path} ');
+
+
+     ///'owner' is ID
+     /// Should compare the owner as me
+     /// Avoid infinite recursion loop by indicator own
+     if(newNode.owner != Types.owner){
+
+
+           ///get metrics from external plugin
+           if(newNode.path.contains(':data:metrics') &amp;&amp; newNode.name != 'metrics' ){
+
+                 logger.i('got event metrics =&gt; ${newNode.path}');
+                 //await Future.delayed(const Duration(milliseconds: 1000));
+                 Storage.getValuePath.add(newNode.parentPath);
+                 await updateData(newNode);
+
+           }
+           ..... 
+      }
+   }
+
+ ------------------------------
+
+ ///Update risk score as latest
+ ///Refer latest metrics from external plugins
+ Future updateData(Node? metricNode) async{
+
+   try {
+
+       ///split entire path using ':'
+       ///':~:~:~:....'
+       ///path List [0] =&gt; ''
+       ///path LIst [1] =&gt; Users or Devices etc.
+       ///...
+       var pathList = metricNode!.path.toString().split(':');
+
+       var type = '';
+       var nodePath = '';
+       var nodeName = '';
+
+
+       ///Set metrics type, path and name
+       if(pathList[1] == Types.users){
+         type =Types.users;
+         nodePath = Types.userScoreNodePath;
+         nodeName = Types.geigerScoreUser;
+       }else{
+
+         type =Types.devices;
+         nodePath = Types.deviceScoreNodePath;
+         nodeName =Types.geigerScoreDevice;
+       }
+
+       ///Check metric value (GEIGERvalue) whether exist or not
+       if((await metricNode.getValue('GEIGERvalue')) != null) {
+
+         //await clearPN();
+
+         await updateMetrics(type, metricNode);
+         await updateScoreNode(nodePath,nodeName,type);
+         await updateRecommendationNode(nodePath,Types.recommendations,type);
+         await aggregateScore();
+
+       }else{
+         logger.i('updateMetrics $metricNode GEIGERvalue is not existed');
+         return;
+       }
+
+   }catch(e){
+     logger.e(e);
+
+   }
+
+ }
+</code></pre>
+<!--next-->
+<hr />
+<h2 id="getting-pairing-data">Getting pairing data</h2>
+<p><em>Getting pairing data (Devices, Employees)</em></p>
 <p><strong>given</strong></p>
 <blockquote>
 <ul>
@@ -280,6 +443,10 @@
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../4-checkdataexist/" class="btn btn-neutral float-left" title="Check risk score nodes exist"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../scoreCalculation/" class="btn btn-neutral float-right" title="Score Calculation">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -301,6 +468,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="../4-checkdataexist/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../scoreCalculation/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

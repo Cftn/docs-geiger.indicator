@@ -16,6 +16,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ngsi-ld.tutorials.readthedocs.org/list-module/</loc>
+         <lastmod>2022-08-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ngsi-ld.tutorials.readthedocs.org/data/devices/</loc>
          <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
@@ -102,6 +107,16 @@
     </url>
     <url>
          <loc>https://ngsi-ld.tutorials.readthedocs.org/testcase/SMEscoreCalculation/</loc>
+         <lastmod>2022-08-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ngsi-ld.tutorials.readthedocs.org/testcase/listen-geiger-data/</loc>
+         <lastmod>2022-08-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ngsi-ld.tutorials.readthedocs.org/testcase/prepare-inputdata/</loc>
          <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>

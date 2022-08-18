@@ -68,22 +68,13 @@ If you have questions related to this example, feel free to can ask them as a Gi
 
 ***
 
-Example Project usage
----------------------
-
-This project has a standard MkDocs layout which is built by Read the Docs almost the same way that you would build it locally (on your own laptop!).
-
-You can build and view this documentation project locally - we recommend that you activate [a local Python virtual environment first](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment):
-
-```console
-# Install required Python dependencies (MkDocs etc.)
-pip install -r docs/requirements.txt
-
-# Run the mkdocs development server
-mkdocs serve
-```
-
 Read the Docs tutorial
 ----------------------
 
 To get started with Read the Docs, you may also refer to the [Read the Docs tutorial](https://docs.readthedocs.io/en/stable/tutorial/). It provides a full walk-through of building an example project similar to the one in this repository.
+
+
+Author
+----------------------
+
+JongGwan An (kman3212@gmail.com)

@@ -2,137 +2,122 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://ngsi-ld.tutorials.readthedocs.org/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ngsi-ld.tutorials.readthedocs.org/geiger-risk-score/</loc>
-         <lastmod>2022-08-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://ngsi-ld.tutorials.readthedocs.org/implementation/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ngsi-ld.tutorials.readthedocs.org/indicator-algorithm/</loc>
-         <lastmod>2022-08-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://ngsi-ld.tutorials.readthedocs.org/metric-data/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ngsi-ld.tutorials.readthedocs.org/data/devices/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ngsi-ld.tutorials.readthedocs.org/data/enterprise/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ngsi-ld.tutorials.readthedocs.org/data/geiger-score/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ngsi-ld.tutorials.readthedocs.org/data/global/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ngsi-ld.tutorials.readthedocs.org/data/local/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ngsi-ld.tutorials.readthedocs.org/data/recommendation/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ngsi-ld.tutorials.readthedocs.org/data/sensor-values/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ngsi-ld.tutorials.readthedocs.org/imple/flowchart/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ngsi-ld.tutorials.readthedocs.org/imple/source-code/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ngsi-ld.tutorials.readthedocs.org/imple/system-architecture/</loc>
-         <lastmod>2022-08-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://ngsi-ld.tutorials.readthedocs.org/imple/testcase/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ngsi-ld.tutorials.readthedocs.org/testcase/1-accessLDS/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ngsi-ld.tutorials.readthedocs.org/testcase/2-getuuid/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ngsi-ld.tutorials.readthedocs.org/testcase/3-mapping/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ngsi-ld.tutorials.readthedocs.org/testcase/4-checkdataexist/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ngsi-ld.tutorials.readthedocs.org/testcase/5-setupListener/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ngsi-ld.tutorials.readthedocs.org/testcase/6-gettingMetric/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ngsi-ld.tutorials.readthedocs.org/testcase/7-gettingPairingdata/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ngsi-ld.tutorials.readthedocs.org/testcase/SMEscoreCalculation/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ngsi-ld.tutorials.readthedocs.org/testcase/prepareProfile/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ngsi-ld.tutorials.readthedocs.org/testcase/prepareRecommendation/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ngsi-ld.tutorials.readthedocs.org/testcase/scoreCalculation/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

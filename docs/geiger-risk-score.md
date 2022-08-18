@@ -1,3 +1,9 @@
+<!--**
+ @file
+ @copyright FHNW Switzerland 2022, FHNW
+ @authors JongGwan An [kman3212@gmail.com]
+-->
+
 <h2>GEIGER Risk Score</h2>
 
 The GEIGER Indicator solution allows users to calculate their GEIGER score, a measure of the cybersecurity risk to which they and their SME are exposed. Based on the characteristics of an MSE and the results of the GEIGER Indicator calculation, users receive recommendations for actions to mitigate cybersecurity risk.

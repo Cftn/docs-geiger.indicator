@@ -75,13 +75,13 @@ If you have questions related to this example, feel free to can ask them as a Gi
 
 ***
 
-Read the Docs tutorial
-----------------------
+
+<h3 style="box-shadow: 0px 4px 0px 0px #233c68;">Read the Docs tutorial</h3>
 
 To get started with Read the Docs, you may also refer to the [Read the Docs tutorial](https://docs.readthedocs.io/en/stable/tutorial/). It provides a full walk-through of building an example project similar to the one in this repository.
 
 
-Author
-----------------------
+
+<h3 style="box-shadow: 0px 4px 0px 0px #233c68;">Authors</h3>
 
 JongGwan An (kman3212@gmail.com)

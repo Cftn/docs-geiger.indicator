@@ -5,7 +5,6 @@
 -->
  
 #
-
 ##GEIGER <span style='color:#d6604d'>Indicator</span> 
 
 [![Documentation](https://nexus.lab.fiware.org/repository/raw/public/badges/chapters/documentation.svg)](https://fiware-tutorials.rtfd.io)

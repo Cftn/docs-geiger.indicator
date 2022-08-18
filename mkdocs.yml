@@ -1,36 +1,27 @@
 site_name: 'Tutorial of <span style=''color:#d6604d''> GEIGER</span> Indicator'
 site_url: 'https://ngsi-ld.tutorials.readthedocs.org'
-repo_url: 'https://github.com/fiware/tutorials.NGSI-LD'
-site_description: FIWARE NGSI-LD Tutorial Documentation (Smart Farm)
+site_description: GEIGER indicator Tutorial Documentation
 theme: readthedocs
 nav:
   - Home: index.md
   - GEIGER Risk Score: geiger-risk-score.md
   - GEIGER Indicator Algorithm: indicator-algorithm.md
-  - '<span style=''font-size:100%;padding:0px''>GEIGER Data for Risk Score</span>':
-    - :Local : data/local.md
-    - :Global : data/global.md
-    - :Enterpise : data/enterprise.md
-    - :Devices : data/devices.md
-    - sensor values : data/sensor-values.md
-    - geigerScore : data/geiger-score.md
-    - geigerRecommendation : data/recommendation.md
-  - '<span style=''font-size:100%;padding:0px''>Implementation</span>':
-    - System Architecture: imple/system-architecture.md
-    - Flowchart: imple/flowchart.md
-    - Source Code: imple/source-code.md
-  - '<span style=''font-size:100%;padding:0px''>Test case</span>':
-    - Get instance of Local Data Storage: testcase/1-accessLDS.md
-    - Get current user and device UUID: testcase/2-getuuid.md
-    - Prepare indicator input data :
-      - Mapping threats: testcase/3-mapping.md
-      - Prepare global profiles : testcase/prepareProfile.md
-      - Prepare global recommendations : testcase/prepareRecommendation
-    - Check risk score nodes exist: testcase/4-checkdataexist.md
-    - Recived notification of GEIGER data :
-      - Set up Storage Listener: testcase/5-setupListener.md
-      - Getting metrics data : testcase/6-gettingMetric.md
-      - Getting pairing data : testcase/7-gettingPairingdata.md
-    - Score Calculation :
-      - User/Device/Aggregate Score: testcase/scoreCalculation.md
-      - SME Score Calculation: testcase/SMEscoreCalculation.md
+  - GEIGER Data for Risk Score:
+    - ':Local' : 'data/local.md'
+    - ':Global' : 'data/global.md'
+    - ':Enterpise' : 'data/enterprise.md'
+    - ':Devices' : 'data/devices.md'
+    - 'sensor values' : 'data/sensor-values.md'
+    - 'geigerScore' : 'data/geiger-score.md'
+    - 'geigerRecommendation' : 'data/recommendation.md'
+  - Implementation:
+    - 'System Architecture': 'imple/system-architecture.md'
+    - 'Flowchart': 'imple/flowchart.md'
+    - 'Source Code': 'imple/source-code.md'
+  - Test case:
+    - 'Get instance of Local Data Storage': 'testcase/1-accessLDS.md'
+    - 'Get current user and device UUID': 'testcase/2-getuuid.md'
+    - 'Prepare indicator input data': 'testcase/prepare-inputdata.md'
+    - 'Check risk score nodes exist': 'testcase/4-checkdataexist.md'
+    - 'Recived notification of GEIGER data': 'testcase/listen-geiger-data.md'
+    - 'Score Calculation' : 'testcase/scoreCalculation.md'
